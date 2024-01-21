@@ -51,18 +51,25 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   width: double.infinity,
                   height: 50,
                   child: CustomButton(
-                    onPressed: () {
-                      ap.isSignedIn == true //when true, then fetch shared preference data
-                          ? Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomeScreen()))
-                          : Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const RegisterScreen(),
-                            ),
-                          );
+                    onPressed: () async {
+                      if(ap.isSignedIn == true) {
+                        await ap.getDFataFromSP().whenComplete(() => 
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomeScreen()
+                          ),
+                        ),
+                      );
+                        
+                      }else {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterScreen(),
+                          ),
+                        );
+                      }
                     },
                     text: "Get Started",
                   )
