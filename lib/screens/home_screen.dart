@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           CircleAvatar(
             backgroundColor: Colors.purple,
-            backgroundImage: NetworkImage(ap.userModel!.profilePic),
+            backgroundImage: NetworkImage(ap.userModel.profilePic),
             radius: 50,
           ),
           const SizedBox(height: 20),
