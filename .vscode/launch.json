@@ -4,7 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+
         {
             "name": "otp_mobile",
             "request": "launch",
@@ -23,14 +23,5 @@
             "flutterMode": "release"
         }
     ],
-    "compounds": [
-        {
-            "name": "otp_mobile (all modes)",
-            "configurations": [
-                "otp_mobile",
-                "otp_mobile (profile mode)",
-                "otp_mobile (release mode)"
-            ]
-        }
-    ]
+
 }
